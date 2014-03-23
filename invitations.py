@@ -13,7 +13,7 @@ print(open('preamble.tex').read())
 print('\\begin{document}')
 
 for guest in guests:
-    template = Template(open(guest['language'] + '.tex').read())
+    template = Template(open(guest['language'] + '.tex').read().rstrip('\n'))
 
     # set lagzi for re-use in template, it's read from another template
     if guest['lagzi'] == 'y':
